@@ -1,0 +1,32 @@
+<% include ../partials/header %>
+
+
+
+
+   <div class="jumbotron">
+        <div class="container">
+            <h2>Welcome to ExperienceUkraine</h2>
+            <h5 class="font-weight-light">View, post and comment Ukrainian Sights!</h5>
+            <hr>
+            <p>
+              <a class="btn btn-primary" href="/campgrounds/new">Add your experience! <i class="fas fa-plus-square"></i></a>
+            </p> 
+        </div>
+  </div>
+  <hr class="min">
+     <div class="container">
+        <div class="row text-center" id="campground-grid">
+        <% campgrounds.forEach(function(campground){ %>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                  <img class="card-img-top" src="<%= campground.image %>" alt="<%= campground.name %>">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= campground.name %></h5>
+                    <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info <i class="fas fa-arrow-circle-right"></i></a>
+                  </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+    
+<% include ../partials/footer %>
